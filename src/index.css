@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.toggleDarkBtn {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 28px;
+}
+
+.toggleDarkBtn input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slideBtnTg {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(172, 172, 172);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.slideBtnTg:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 5px;
+  bottom: 3px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: white;
+}
+
+input:checked + .slideBtnTg {
+  background-color: rgb(55 65 81);
+}
+
+input:focus + .slideBtnTg {
+  box-shadow: 0 0 1px rgb(55 65 81);
+}
+
+input:checked + .slideBtnTg:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+.slideBtnTg.round {
+  border-radius: 34px;
+}
+
+.slideBtnTg.round:before {
+  border-radius: 50%;
+}
